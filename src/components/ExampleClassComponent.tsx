@@ -1,5 +1,4 @@
 import React from 'react';
-import { Item } from '../interfaces';
 
 export default class ExampleClassComponent extends React.Component<{
   num: number;
@@ -8,6 +7,17 @@ export default class ExampleClassComponent extends React.Component<{
     increment: 0,
     value: '',
   };
+
+  componentDidMount() {
+    console.log('IM READY!');
+  }
+
+  componentWillUnmount() {
+    console.log('Unmounting...');
+  }
+  componentDidUpdate() {
+    
+  }
 
   handleInc = () => {
     const { increment } = this.state;

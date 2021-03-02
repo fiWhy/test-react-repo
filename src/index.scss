@@ -14,9 +14,10 @@ code {
 
 .to-do-list {
   &__item {
-    cursor: pointer;
-    &--finished {
+    &__check {
       cursor: pointer;
+    }
+    &--finished {
       .text-holder {
         .text {
           text-decoration: line-through;

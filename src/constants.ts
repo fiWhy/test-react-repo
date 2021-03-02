@@ -8,7 +8,7 @@ export const listOfTasks: Item[] = [
   {
     id: 2,
     title: "Second task",
-    hidden: true,
+    hidden: false,
   },
   {
     id: 3,

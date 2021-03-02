@@ -1,23 +1,22 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Check from './Check';
 import { ToDoItemProps } from './interfaces';
 import Remove from './Remove';
 import TextHolder from './TextHolder';
+import classNames from 'classnames';
 
 const ToDoItem: FC<ToDoItemProps> = ({ item }) => {
-  let finished = true;
+  const [finished, setFinished] = useState(false);
 
-  console.log(finished);
   return (
     <>
       <div
-        onClick={() => {
-          console.log('Clicked');
-          finished = !!finished;
-        }}
-        className={finished ? 'to-do-list__item--finished' : 'to-do-list__item'}
+        className={classNames({
+          'to-do-list__item--finished': finished,
+          'to-do-list__item': !finished,
+        })}
       >
-        <Check />
+        <Check onSelect={() => setFinished(!finished)} />
         <TextHolder item={item} />
         <Remove />
       </div>

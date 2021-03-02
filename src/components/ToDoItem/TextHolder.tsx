@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { truncate } from '../../utils';
 import { TextHolderProps } from './interfaces';
 
 const TextHolder: FC<TextHolderProps> = ({ item }) => {
@@ -7,7 +6,7 @@ const TextHolder: FC<TextHolderProps> = ({ item }) => {
   return (
     <div className={'to-do-list__item__text-holder text-holder'}>
       <div>{id}</div>
-      <div className={'text'}>{truncate(title)}</div>
+      <div className={'text'}>{title}</div>
     </div>
   );
 };
