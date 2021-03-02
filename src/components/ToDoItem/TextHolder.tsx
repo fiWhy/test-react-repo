@@ -1,13 +1,13 @@
-import { FC } from "react";
-import { truncate } from "../../utils";
-import { TextHolderProps } from "./interfaces";
+import { FC } from 'react';
+import { truncate } from '../../utils';
+import { TextHolderProps } from './interfaces';
 
 const TextHolder: FC<TextHolderProps> = ({ item }) => {
   const { id, title } = item;
   return (
-    <div className={"to-do-list__item__text-holder"}>
+    <div className={'to-do-list__item__text-holder text-holder'}>
       <div>{id}</div>
-      <div>{truncate(title)}</div>
+      <div className={'text'}>{truncate(title)}</div>
     </div>
   );
 };
