@@ -13,9 +13,25 @@ code {
 }
 
 .to-do-list {
+  width: 500px;
+  &__wrapper {
+    .item {
+      display: flex;
+      flex-direction: row;
+    }
+  }
   &__item {
     &__check {
       cursor: pointer;
+      flex: 1;
+    }
+
+    &__text-holder {
+      flex: 5;
+    }
+
+    &__remove {
+      flex: 1;
     }
     &--finished {
       .text-holder {

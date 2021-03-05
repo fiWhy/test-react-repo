@@ -11,13 +11,16 @@ const ToDoItem: FC<ToDoItemProps> = ({ item }) => {
   return (
     <>
       <div
-        className={classNames({
-          'to-do-list__item--finished': finished,
-          'to-do-list__item': !finished,
-        })}
+        className={classNames([
+          'item',
+          {
+            'to-do-list__item--finished': finished,
+            'to-do-list__item': !finished,
+          },
+        ])}
       >
-        <Check onSelect={() => setFinished(!finished)} />
         <TextHolder item={item} />
+        <Check onSelect={() => setFinished(!finished)} />
         <Remove />
       </div>
       <div></div>
