@@ -1,11 +1,11 @@
-import { FC, useState } from 'react';
+import { FC, memo, useMemo, useState } from 'react';
 import Check from './Check';
 import { ToDoItemProps } from './interfaces';
 import Remove from './Remove';
 import TextHolder from './TextHolder';
 import classNames from 'classnames';
 
-const ToDoItem: FC<ToDoItemProps> = ({ item }) => {
+const ToDoItem: FC<ToDoItemProps> = ({ item, onRemove }) => {
   const [finished, setFinished] = useState(false);
 
   return (
@@ -21,11 +21,11 @@ const ToDoItem: FC<ToDoItemProps> = ({ item }) => {
       >
         <TextHolder item={item} />
         <Check onSelect={() => setFinished(!finished)} />
-        <Remove />
+        <Remove onClick={() => onRemove(item.id)} />
       </div>
       <div></div>
     </>
   );
 };
 
-export default ToDoItem;
+export default memo(ToDoItem);

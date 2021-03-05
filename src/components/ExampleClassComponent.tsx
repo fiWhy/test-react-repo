@@ -1,8 +1,17 @@
 import React from 'react';
 
-export default class ExampleClassComponent extends React.Component<{
+type ExampleProps = {
   num: number;
-}> {
+};
+
+type ExampleState = {
+  increment: number;
+  value: string;
+};
+export default class ExampleClassComponent extends React.Component<
+  ExampleProps,
+  ExampleState
+> {
   state = {
     increment: 0,
     value: '',
@@ -15,9 +24,8 @@ export default class ExampleClassComponent extends React.Component<{
   componentWillUnmount() {
     console.log('Unmounting...');
   }
-  componentDidUpdate() {
-    
-  }
+
+  componentDidUpdate() {}
 
   handleInc = () => {
     const { increment } = this.state;

@@ -14,6 +14,12 @@ code {
 
 .to-do-list {
   width: 500px;
+  &__items {
+    &__wrapper {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+  }
   &__wrapper {
     .item {
       display: flex;
@@ -32,6 +38,7 @@ code {
 
     &__remove {
       flex: 1;
+      cursor: pointer;
     }
     &--finished {
       .text-holder {
